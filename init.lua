@@ -9,7 +9,6 @@ vim.keymap.set("n", "<leader>tt", function()
 	-- WSL automatically handles the translation if it's in your Windows Path.
 	-- We use 'start-child' or 'cli spawn' to open a new window.
 	local cmd = string.format("wezterm.exe cli spawn --cwd '%s' &", dir)
-
 	os.execute(cmd)
 end, { desc = "Open WezTerm from WSL" })
 
