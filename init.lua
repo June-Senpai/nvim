@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>tt", function()
 	-- We use 'start-child' or 'cli spawn' to open a new window.
 	local cmd = string.format("wezterm.exe cli spawn --cwd '%s' &", dir)
 	os.execute(cmd)
-end, { desc = "Open WezTerm from WSL" })
+end, { desc = "Open WezTerm terminal of the folder currently in from neovim" })
 
 vim.filetype.add({
 	extension = {
