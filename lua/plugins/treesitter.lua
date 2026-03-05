@@ -18,6 +18,7 @@ return {
 					"markdown",
 					"markdown_inline",
 					"printf",
+					"sql",
 				},
 				auto_install = true,
 				highlight = { enable = true },

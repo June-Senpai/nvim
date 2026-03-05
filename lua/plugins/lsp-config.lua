@@ -16,6 +16,7 @@ return {
 					},
 				},
 			})
+
 			vim.lsp.config("astro", {})
 			vim.lsp.config("mdx_analyzer", {})
 

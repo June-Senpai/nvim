@@ -15,5 +15,6 @@ vim.filetype.add({
 	extension = {
 		mdx = "mdx",
 		astro = "astro",
+		sql = "sql",
 	},
 })
