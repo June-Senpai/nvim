@@ -16,6 +16,7 @@ return {
 					markdown = { "prettier" },
 
 					go = { "goimports", "gofmt" },
+					yaml = { "prettierd", "prettier" },
 				},
 
 				format_on_save = {

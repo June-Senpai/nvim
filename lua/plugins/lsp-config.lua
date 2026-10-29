@@ -6,7 +6,15 @@ return {
 		config = function()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "gopls", "astro", "mdx_analyzer" },
+				ensure_installed = { "clangd", "gopls", "astro", "mdx_analyzer" },
+			})
+			vim.lsp.config("clangd", {
+				cmd = {
+					"clangd",
+					"--background-index",
+					"--clang-tidy",
+					"--completion-style=detailed",
+				},
 			})
 
 			vim.lsp.config("gopls", {
@@ -17,6 +25,20 @@ return {
 				},
 			})
 
+			vim.lsp.config("yaml", {
+				settings = {
+					yaml = {
+						format = { enable = true },
+						validate = true,
+						-- schemas = {
+						-- 	-- Enable Kubernetes schemas
+						-- 	["https://json.schemastore.org/kubernetes.json"] = "/*.yaml",
+						-- 	-- Example for GitHub Actions
+						-- 	["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+						-- },
+					},
+				},
+			})
 			vim.lsp.config("astro", {})
 			vim.lsp.config("mdx_analyzer", {})
 
@@ -66,6 +88,7 @@ return {
 
 			-- 4. Code Actions
 			vim.keymap.set("n", "<leader>ll", vim.lsp.buf.code_action, { desc = "Code Action" })
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 		end,
 	},
 }

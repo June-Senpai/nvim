@@ -19,6 +19,7 @@ return {
 					"markdown_inline",
 					"printf",
 					"sql",
+					"yaml",
 				},
 				auto_install = true,
 				highlight = { enable = true },
